@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  mariadb:
+    image: mariadb
+    container_name: tc-demo-db
+    ports:
+      - '3306:3306'
+    environment:
+      MARIADB_DATABASE: tc_demo
+      MARIADB_USER: mariadb
+      MARIADB_PASSWORD: mariadb
+      MARIADB_ROOT_PASSWORD: mariadb

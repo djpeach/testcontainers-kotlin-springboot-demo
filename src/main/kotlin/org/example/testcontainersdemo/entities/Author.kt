@@ -1,0 +1,22 @@
+package org.example.testcontainersdemo.entities
+
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
+import jakarta.persistence.Id
+import java.sql.Date
+import java.sql.Timestamp
+import org.hibernate.annotations.CreationTimestamp
+import org.hibernate.annotations.UpdateTimestamp
+
+@Entity
+class Author(
+  var givenName: String,
+  var surname: String? = null,
+  var dateOfBirth: Date? = null,
+  var dateOfDeath: Date? = null,
+) {
+  @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long = 0
+  @CreationTimestamp val createdAt: Timestamp = Timestamp(0)
+  @UpdateTimestamp val updatedAt: Timestamp = Timestamp(0)
+}
